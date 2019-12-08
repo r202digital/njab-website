@@ -1,59 +1,97 @@
 import React from 'react'
-import Link from 'next/link'
+import {
+  Box,
+  List,
+  ListItem,
+  Stack,
+  Link,
+  Text,
+  Image,
+  IconButton
+} from "@chakra-ui/core"
+import Container from './Container'
 
 const links = [
-  { href: 'https://github.com/segmentio/create-next-app', label: 'Github' }
+  {
+    href: '/',
+    label: 'Home'
+  },
+  {
+    href: '/',
+    label: 'Our Story'
+  },
+  {
+    href: '/',
+    label: 'Our Services'
+  },
+  {
+    href: '/',
+    label: 'Portfolio'
+  },
+  {
+    href: '/',
+    label: 'Our Journal'
+  },
+  {
+    href: '/',
+    label: 'Contact'
+  }
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`
   return link
 })
 
 const Nav = () => (
-  <nav>
-    {/*<ul>
-      {/*<li>
-        <Link prefetch href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      <ul>
-        {links.map(({ key, href, label }) => (
-          <li key={key}>
-            <Link href={href}>
-              <a>{label}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </ul>*/}
+  <Box
+    as="nav"
+    >
+    <Container
+      alignItems="center"
+      justifyContent="space-between"
+      fontFamily="Montserrat"
+      fontSmoothing="anti-aliased"
+      borderBottom="1px solid rgba(255,255,255,0.5)"
+      py="15px"
+      flexDirection="row"
+      outerContainerProps={{
+        background: "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%)"
+      }}
+      >
+      <Image
+        src="/logonjabwhite.png"
+        height="30px"/>
+      <Box color="white" display={{ xs: "none", md: "initial"}}>
+        {links.map(link =>
+          <Link
+            mx="15px"
+            fontSize="12px"
+            letterSpacing="2px"
+            paddingTop="5px"
+            paddingBottom="4px"
+            textTransform="uppercase"
+            transition="all 0.5s"
+            borderBottom="1px solid transparent"
+            _hover={{
+              borderBottomColor: "white"
+            }}
+            href={link.href}>
+            {link.label}
+          </Link>
+        )}
+      </Box>
+      <IconButton
+        aria-label="Search database"
+        background="transparent"
+        color="white"
+        icon="search"
+        _hover={{
+          backgroundColor: "transparent",
+          color: "rgba(255,255,255,0.5)"
+        }}
+        />
+    </Container>
 
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
-  </nav>
+  </Box>
 )
 
 export default Nav
