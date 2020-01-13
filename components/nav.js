@@ -9,6 +9,7 @@ import {
   Image,
   IconButton
 } from "@chakra-ui/core"
+import { MdMenu, MdSearch } from "react-icons/md";
 import Container from './Container'
 
 const links = [
@@ -42,9 +43,7 @@ const links = [
 })
 
 const Nav = () => (
-  <Box
-    as="nav"
-    >
+  <Box as="nav">
     <Container
       alignItems="center"
       justifyContent="space-between"
@@ -54,14 +53,13 @@ const Nav = () => (
       py="15px"
       flexDirection="row"
       outerContainerProps={{
-        background: "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%)"
+        background:
+          "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%)"
       }}
-      >
-      <Image
-        src="/logonjabwhite.png"
-        height="30px"/>
-      <Box color="white" display={{ xs: "none", md: "initial"}}>
-        {links.map(link =>
+    >
+      <Image src="/logonjabwhite.png" height="30px" />
+      <Box color="white" display={{ xs: "none", md: "initial" }}>
+        {links.map(link => (
           <Link
             mx="15px"
             fontSize="12px"
@@ -74,24 +72,39 @@ const Nav = () => (
             _hover={{
               borderBottomColor: "white"
             }}
-            href={link.href}>
+            href={link.href}
+          >
             {link.label}
           </Link>
-        )}
+        ))}
       </Box>
-      <IconButton
-        aria-label="Search database"
-        background="transparent"
-        color="white"
-        icon="search"
-        _hover={{
-          backgroundColor: "transparent",
-          color: "rgba(255,255,255,0.5)"
-        }}
+      <Box>
+        <IconButton
+          aria-label="Search database"
+          background="transparent"
+          color="white"
+          icon={MdSearch}
+          fontSize="30px"
+          _hover={{
+            backgroundColor: "transparent",
+            color: "rgba(255,255,255,0.5)"
+          }}
         />
+        <IconButton
+          display={{ xs: "initial", md: "none" }}
+          aria-label="Search database"
+          background="transparent"
+          color="white"
+          icon={MdMenu}
+          fontSize="30px"
+          _hover={{
+            backgroundColor: "transparent",
+            color: "rgba(255,255,255,0.5)"
+          }}
+        />
+      </Box>
     </Container>
-
   </Box>
-)
+);
 
 export default Nav

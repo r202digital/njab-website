@@ -101,17 +101,10 @@ export default class DoubleSlider extends React.Component {
                 height={{ xs: "300px", md: "375px" }}
                 justifyContent="center"
                 _focus={{ outline: "none" }}
+                backgroundImage={`url("${item.image}")`}
+                backgroundSize="cover"
                 position="relative"
-              >
-                <Image
-                  src={item.image}
-                  maxWidth="initial"
-                  objectFit="cover"
-                  style={{
-                    filter: "brightness(0.7)"
-                  }}
-                />
-              </PseudoBox>
+              />
             ))}
           </Slider>
         </Container>

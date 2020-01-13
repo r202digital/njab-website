@@ -3,10 +3,14 @@ import Link from 'next/link'
 import Head from '../components/head'
 import Nav from '../components/Nav'
 import Container from '../components/Container'
-import { Box, Heading } from "@chakra-ui/core"
+import { Box, Flex, Heading, Text, List, ListItem, Input, InputGroup, InputLeftAddon, Icon } from "@chakra-ui/core"
+import { FaArrowRight } from "react-icons/fa";
+
 
 const Layout = ({ children, navProps, ...props }) => (
   <Box minHeight="100vh" {...props}>
+    {/* Header */}
+
     <Head title="Not Just a Box Events" />
     <Box
       backgroundImage="url('/6@edit.png')"
@@ -34,7 +38,164 @@ const Layout = ({ children, navProps, ...props }) => (
         </Heading>
       </Container>
     </Box>
+
+    {/* Body */}
     {children}
+
+    {/* Footer */}
+    <Container>
+      <Flex color="#de8e83">
+        <Box flex="1">
+          <Heading
+            as="h1"
+            fontSize="18px"
+            letterSpacing="2px"
+            marginBottom="20px"
+            fontWeight="400"
+            textTransform="uppercase"
+          >
+            Say Hello
+          </Heading>
+          <Text>497 Evergreen Rd. Roseville, CA 95673 +44 345 678 903</Text>
+        </Box>
+        <Box flex="2">
+          <Heading
+            as="h1"
+            fontSize="18px"
+            letterSpacing="2px"
+            marginBottom="20px"
+            fontWeight="400"
+            textTransform="uppercase"
+            textAlign="center"
+          >
+            Questions?
+          </Heading>
+          <Box px="15%">
+            <InputGroup>
+              <InputLeftAddon 
+                borderRadius="0px" 
+                backgroundColor="transparent" 
+                borderLeft="initial" 
+                borderTop="initial" 
+                borderColor="#de8e83"
+                paddingRight="10px"
+                paddingLeft="0px"
+              >
+                <Box as={FaArrowRight} size="20px" />
+              </InputLeftAddon>
+              <Input
+                placeholder="FULL NAME"
+                fontSize="12px"
+                paddingLeft="5px"
+                size="sm"
+                mb="10px"
+                borderTop="none"
+                borderRight="none"
+                borderLeft="none"
+                borderRadius="0px"
+                borderColor="#de8e83"
+                _hover={{
+                  borderColor: "#de8e83"
+                }}
+                _focus={{
+                  boxShadow: "initial",
+                  borderColor: "#de8e83"
+                }}
+              />
+            </InputGroup>
+            <InputGroup>
+              <InputLeftAddon 
+                borderRadius="0px" 
+                backgroundColor="transparent" 
+                borderLeft="initial" 
+                borderTop="initial" 
+                borderColor="#de8e83"
+                paddingRight="10px"
+                paddingLeft="0px"
+              >
+                <Box as={FaArrowRight} size="20px" />
+              </InputLeftAddon>
+              <Input
+                placeholder="CONTACT NUMBER"
+                fontSize="12px"
+                paddingLeft="5px"
+                size="sm"
+                mb="10px"
+                borderTop="none"
+                borderRight="none"
+                borderLeft="none"
+                borderRadius="0px"
+                borderColor="#de8e83"
+                _hover={{
+                  borderColor: "#de8e83"
+                }}
+                _focus={{
+                  boxShadow: "initial",
+                  borderColor: "#de8e83"
+                }}
+              />
+            </InputGroup>
+            <InputGroup>
+              <InputLeftAddon 
+                borderRadius="0px" 
+                backgroundColor="transparent" 
+                borderLeft="initial" 
+                borderTop="initial" 
+                borderColor="#de8e83"
+                paddingRight="10px"
+                paddingLeft="0px"
+              >
+                <Box as={FaArrowRight} size="20px" />
+              </InputLeftAddon>
+              <Input
+                placeholder="EMAIL ADDRESS"
+                fontSize="12px"
+                paddingLeft="5px"
+                size="sm"
+                mb="10px"
+                borderTop="none"
+                borderRight="none"
+                borderLeft="none"
+                borderRadius="0px"
+                borderColor="#de8e83"
+                _hover={{
+                  borderColor: "#de8e83"
+                }}
+                _focus={{
+                  boxShadow: "initial",
+                  borderColor: "#de8e83"
+                }}
+              />
+            </InputGroup>
+          </Box>
+        </Box>
+        <Box flex="1">
+          <Heading
+            as="h1"
+            fontSize="18px"
+            letterSpacing="2px"
+            marginBottom="20px"
+            fontWeight="400"
+            textTransform="uppercase"
+          >
+            Lorem Ipsum
+          </Heading>
+          <Flex>
+            <List styleType="none" mr="15px">
+              <ListItem>FAQ</ListItem>
+              <ListItem>Terms of Use</ListItem>
+              <ListItem>Privacy Policy</ListItem>
+              <ListItem>Cookie Policy</ListItem>
+            </List>
+            <List styleType="none" ml="15px">
+              <ListItem>Contact Us</ListItem>
+              <ListItem>Lorem ipsum</ListItem>
+              <ListItem>Lorem ipsum</ListItem>
+            </List>
+          </Flex>
+        </Box>
+      </Flex>
+    </Container>
     <style jsx global>{`
       .disjoint-slider {
         display: none;
