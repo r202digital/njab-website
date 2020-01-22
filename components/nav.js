@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   Box,
   List,
@@ -8,41 +8,45 @@ import {
   Text,
   Image,
   IconButton
-} from "@chakra-ui/core"
+} from "@chakra-ui/core";
 import { MdMenu, MdSearch } from "react-icons/md";
-import Container from './Container'
+import Container from "./Container";
 
 const links = [
   {
-    href: '/',
-    label: 'Home'
+    href: "/",
+    label: "Home"
   },
   {
-    href: '/',
-    label: 'Our Story'
+    href: "/about",
+    label: "Our Story"
   },
   {
-    href: '/',
-    label: 'Our Services'
+    href: "/",
+    label: "Our Services"
   },
   {
-    href: '/',
-    label: 'Portfolio'
+    href: "/",
+    label: "Portfolio"
   },
   {
-    href: '/',
-    label: 'Our Journal'
+    href: "/",
+    label: "Our Journal"
   },
   {
-    href: '/',
-    label: 'Contact'
+    href: "/",
+    label: "Contact"
   }
 ].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
+  link.key = `nav-link-${link.href}-${link.label}`;
+  return link;
+});
 
-const Nav = () => (
+const Nav = ({
+  outerContainerProps,
+  innerContainerProps,
+  navLogo = "/logonjabpink.png"
+}) => (
   <Box as="nav">
     <Container
       alignItems="center"
@@ -52,13 +56,16 @@ const Nav = () => (
       borderBottom="1px solid rgba(255,255,255,0.5)"
       py="15px"
       flexDirection="row"
-      outerContainerProps={{
-        background:
-          "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%)"
-      }}
+      outerContainerProps={outerContainerProps}
     >
-      <Image src="/logonjabwhite.png" height="30px" />
-      <Box color="white" display={{ xs: "none", md: "initial" }}>
+      <Link href="/">
+        <Image src={navLogo} height="30px" />
+      </Link>
+      <Box
+        color="#dd8d83"
+        display={{ xs: "none", md: "initial" }}
+        {...innerContainerProps}
+      >
         {links.map(link => (
           <Link
             mx="15px"
@@ -107,4 +114,4 @@ const Nav = () => (
   </Box>
 );
 
-export default Nav
+export default Nav;

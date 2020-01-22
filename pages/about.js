@@ -95,46 +95,9 @@ const testimonials = [
   }
 ];
 
-const Home = () => {
+const About = () => {
   return (
-    <Layout
-      fontFamily="Montserrat"
-      headerContainerStyles={{
-        backgroundImage: "url('/6@edit.png')",
-        backgroundPosition: {
-          xs: "50% calc(50% + 35px)",
-          md: "0 calc(50% + 35px)"
-        },
-        backgroundRepeat: "no-repeat",
-        backgroundSize: {
-          xs: "auto 120%",
-          md: "cover"
-        }
-      }}
-      headerComponent={
-        <Container
-          height="calc(100vh - 71px)"
-          justifyContent="center"
-          alignItems="center"
-          textAlign="center"
-          letterSpacing="2px"
-        >
-          <Heading as="h1" fontFamily="Proxima Nova" color="white">
-            MAKING DREAMS INSPIRATIONAL.
-          </Heading>
-        </Container>
-      }
-      navProps={{
-        outerContainerProps: {
-          background:
-            "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%)"
-        },
-        innerContainerProps: {
-          color: "white"
-        },
-        navLogo: "/logonjabwhite.png"
-      }}
-    >
+    <Layout fontFamily="Montserrat">
       <Container
         outerContainerProps={{
           backgroundColor: "#dd8d83",
@@ -540,4 +503,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default About;

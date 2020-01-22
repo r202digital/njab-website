@@ -1,42 +1,37 @@
-import React from 'react'
-import Link from 'next/link'
-import Head from '../components/head'
-import Nav from '../components/Nav'
-import Container from '../components/Container'
-import { Box, Flex, Heading, Text, List, ListItem, Input, InputGroup, InputLeftAddon, Icon } from "@chakra-ui/core"
+import React from "react";
+import Link from "next/link";
+import Head from "../components/head";
+import Nav from "../components/Nav";
+import Container from "../components/Container";
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  List,
+  ListItem,
+  Input,
+  InputGroup,
+  InputLeftAddon,
+  Icon,
+  Image
+} from "@chakra-ui/core";
 import { FaArrowRight } from "react-icons/fa";
 
-
-const Layout = ({ children, navProps, ...props }) => (
+const Layout = ({
+  children,
+  navProps,
+  headerComponent,
+  headerContainerStyles,
+  ...props
+}) => (
   <Box minHeight="100vh" {...props}>
     {/* Header */}
 
     <Head title="Not Just a Box Events" />
-    <Box
-      backgroundImage="url('/6@edit.png')"
-      // backgroundAttachment="fixed"
-      backgroundPosition={{
-        xs: "50% calc(50% + 35px)",
-        md: "0 calc(50% + 35px)"
-      }}
-      backgroundRepeat="no-repeat"
-      backgroundSize={{
-        xs: "auto 120%",
-        md: "cover"
-      }}
-    >
+    <Box {...headerContainerStyles}>
       <Nav {...navProps} />
-      <Container
-        height="calc(100vh - 71px)"
-        justifyContent="center"
-        alignItems="center"
-        textAlign="center"
-        letterSpacing="2px"
-      >
-        <Heading as="h1" fontFamily="Proxima Nova" color="white">
-          MAKING DREAMS INSPIRATIONAL.
-        </Heading>
-      </Container>
+      {headerComponent}
     </Box>
 
     {/* Body */}
@@ -72,11 +67,11 @@ const Layout = ({ children, navProps, ...props }) => (
           </Heading>
           <Box px="15%">
             <InputGroup>
-              <InputLeftAddon 
-                borderRadius="0px" 
-                backgroundColor="transparent" 
-                borderLeft="initial" 
-                borderTop="initial" 
+              <InputLeftAddon
+                borderRadius="0px"
+                backgroundColor="transparent"
+                borderLeft="initial"
+                borderTop="initial"
                 borderColor="#de8e83"
                 paddingRight="10px"
                 paddingLeft="0px"
@@ -104,11 +99,11 @@ const Layout = ({ children, navProps, ...props }) => (
               />
             </InputGroup>
             <InputGroup>
-              <InputLeftAddon 
-                borderRadius="0px" 
-                backgroundColor="transparent" 
-                borderLeft="initial" 
-                borderTop="initial" 
+              <InputLeftAddon
+                borderRadius="0px"
+                backgroundColor="transparent"
+                borderLeft="initial"
+                borderTop="initial"
                 borderColor="#de8e83"
                 paddingRight="10px"
                 paddingLeft="0px"
@@ -136,11 +131,11 @@ const Layout = ({ children, navProps, ...props }) => (
               />
             </InputGroup>
             <InputGroup>
-              <InputLeftAddon 
-                borderRadius="0px" 
-                backgroundColor="transparent" 
-                borderLeft="initial" 
-                borderTop="initial" 
+              <InputLeftAddon
+                borderRadius="0px"
+                backgroundColor="transparent"
+                borderLeft="initial"
+                borderTop="initial"
                 borderColor="#de8e83"
                 paddingRight="10px"
                 paddingLeft="0px"
@@ -167,6 +162,16 @@ const Layout = ({ children, navProps, ...props }) => (
                 }}
               />
             </InputGroup>
+            <Box textAlign="center" fontSize="12px" my="40px">
+              <Image
+                src="/njab_logo.svg"
+                height="30px"
+                width="30px"
+                mx="auto"
+                my="20px"
+              />
+              <Text> © 2019 NOT JUST A BOX EVENTS</Text>
+            </Box>
           </Box>
         </Box>
         <Box flex="1">
@@ -245,4 +250,4 @@ const Layout = ({ children, navProps, ...props }) => (
   </Box>
 );
 
-export default Layout
+export default Layout;
