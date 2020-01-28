@@ -1,59 +1,121 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import {
+  Box,
+  List,
+  ListItem,
+  Stack,
+  Link,
+  Text,
+  Image,
+  IconButton
+} from "@chakra-ui/core";
+import { MdMenu, MdSearch } from "react-icons/md";
+import Container from "./Container";
 
 const links = [
-  { href: 'https://github.com/segmentio/create-next-app', label: 'Github' }
+  {
+    href: "/home",
+    label: "Home"
+  },
+  {
+    href: "/about",
+    label: "Our Story"
+  },
+  {
+    href: "/services",
+    label: "Our Services"
+  },
+  {
+    href: "/portfolio",
+    label: "Portfolio"
+  },
+  {
+    href: "/blog",
+    label: "Our Journal"
+  },
+  {
+    href: "/",
+    label: "Contact"
+  }
 ].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
+  link.key = `nav-link-${link.href}-${link.label}`;
+  return link;
+});
 
-const Nav = () => (
-  <nav>
-    {/*<ul>
-      {/*<li>
-        <Link prefetch href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      <ul>
-        {links.map(({ key, href, label }) => (
-          <li key={key}>
-            <Link href={href}>
-              <a>{label}</a>
-            </Link>
-          </li>
+const Nav = ({
+  outerContainerProps,
+  innerContainerProps,
+  navBorderBottom = "solid 1px #f7e3da",
+  navLogo = "/logonjabpink.png",
+  navSearchIconColor = "#dd8d83",
+  navHighlightColor = "#d1867b"
+}) => (
+  <Box as="nav">
+    <Container
+      alignItems="center"
+      justifyContent="space-between"
+      fontFamily="Montserrat"
+      fontSmoothing="anti-aliased"
+      // borderBottom="1px solid rgba(255,255,255,0.5)"
+      borderBottom={navBorderBottom}
+      py="15px"
+      flexDirection="row"
+      outerContainerProps={outerContainerProps}
+    >
+      <Link href="/">
+        <Image src={navLogo} height="30px" />
+      </Link>
+      <Box
+        color="#dd8d83"
+        display={{ xs: "none", md: "initial" }}
+        {...innerContainerProps}
+      >
+        {links.map(link => (
+          <Link
+            mx="15px"
+            fontSize="12px"
+            letterSpacing="2px"
+            paddingTop="5px"
+            paddingBottom="4px"
+            textTransform="uppercase"
+            transition="all 0.5s"
+            borderBottom="1px solid transparent"
+            _hover={{
+              borderBottomColor: navHighlightColor
+            }}
+            href={link.href}
+          >
+            {link.label}
+          </Link>
         ))}
-      </ul>
-    </ul>*/}
+      </Box>
+      <Box>
+        <IconButton
+          aria-label="Search database"
+          background="transparent"
+          color={navSearchIconColor}
+          icon={MdSearch}
+          fontSize="30px"
+          _hover={{
+            backgroundColor: "transparent",
+            opacity: 0.5
+          }}
+        />
+        <IconButton
+          display={{ xs: "initial", md: "none" }}
+          aria-label="Menu"
+          backgroundColor="transparent"
+          color={navSearchIconColor}
+          icon={MdMenu}
+          fontSize="30px"
+          _hover={{
+            backgroundColor: "transparent",
+            opacity: 0.5
+          }}
+        />
+      </Box>
+    </Container>
+  </Box>
+);
 
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
-  </nav>
-)
-
-export default Nav
+export default Nav;
