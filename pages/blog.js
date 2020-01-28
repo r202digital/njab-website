@@ -205,7 +205,7 @@ const Home = () => {
                   <Text>IPSUM</Text>
                 </ListItem>
                 <ListItem>
-                  <Text>DOLOR</Text>
+                  <Text>DOLO</Text>
                 </ListItem>
               </List>
             </Flex>
