@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import Head from "../components/head";
-import Nav from "../components/Nav";
-import Container from "../components/Container";
+import Head from "./head";
+import Nav from "./Nav";
+import Container from "./Container";
 import {
   Box,
   Flex,
