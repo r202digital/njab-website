@@ -14,7 +14,7 @@ import Container from "./Container";
 
 const links = [
   {
-    href: "/",
+    href: "/home",
     label: "Home"
   },
   {
@@ -22,15 +22,15 @@ const links = [
     label: "Our Story"
   },
   {
-    href: "/",
+    href: "/services",
     label: "Our Services"
   },
   {
-    href: "/",
+    href: "/portfolio",
     label: "Portfolio"
   },
   {
-    href: "/",
+    href: "/blog",
     label: "Our Journal"
   },
   {
@@ -45,7 +45,10 @@ const links = [
 const Nav = ({
   outerContainerProps,
   innerContainerProps,
-  navLogo = "/logonjabpink.png"
+  navBorderBottom = "solid 1px #f7e3da",
+  navLogo = "/logonjabpink.png",
+  navSearchIconColor = "#dd8d83",
+  navHighlightColor = "#d1867b"
 }) => (
   <Box as="nav">
     <Container
@@ -53,7 +56,8 @@ const Nav = ({
       justifyContent="space-between"
       fontFamily="Montserrat"
       fontSmoothing="anti-aliased"
-      borderBottom="1px solid rgba(255,255,255,0.5)"
+      // borderBottom="1px solid rgba(255,255,255,0.5)"
+      borderBottom={navBorderBottom}
       py="15px"
       flexDirection="row"
       outerContainerProps={outerContainerProps}
@@ -77,7 +81,7 @@ const Nav = ({
             transition="all 0.5s"
             borderBottom="1px solid transparent"
             _hover={{
-              borderBottomColor: "white"
+              borderBottomColor: navHighlightColor
             }}
             href={link.href}
           >
@@ -89,24 +93,24 @@ const Nav = ({
         <IconButton
           aria-label="Search database"
           background="transparent"
-          color="white"
+          color={navSearchIconColor}
           icon={MdSearch}
           fontSize="30px"
           _hover={{
             backgroundColor: "transparent",
-            color: "rgba(255,255,255,0.5)"
+            opacity: 0.5
           }}
         />
         <IconButton
           display={{ xs: "initial", md: "none" }}
-          aria-label="Search database"
-          background="transparent"
-          color="white"
+          aria-label="Menu"
+          backgroundColor="transparent"
+          color={navSearchIconColor}
           icon={MdMenu}
           fontSize="30px"
           _hover={{
             backgroundColor: "transparent",
-            color: "rgba(255,255,255,0.5)"
+            opacity: 0.5
           }}
         />
       </Box>

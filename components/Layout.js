@@ -185,7 +185,7 @@ const Layout = ({
           >
             Lorem Ipsum
           </Heading>
-          <Flex>
+          <Flex display={{ xs: "block", lg: "flex" }}>
             <List styleType="none" mr="15px">
               <ListItem>FAQ</ListItem>
               <ListItem>Terms of Use</ListItem>

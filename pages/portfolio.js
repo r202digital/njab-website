@@ -7,10 +7,6 @@ import Checkerboard from "../components/Checkerboard";
 import DisjointedSlider from "../components/DisjointedSlider";
 import DoubleSlider from "../components/DoubleSlider";
 import Mosaic from "../components/Mosaic";
-
-import Slider from "react-slick";
-import MessengerCustomerChat from "react-messenger-customer-chat";
-import ProximaRegular from "../public/fonts/Proxima-Regular.otf";
 import {
   Box,
   Heading,

@@ -132,7 +132,10 @@ const Home = () => {
         innerContainerProps: {
           color: "white"
         },
-        navLogo: "/logonjabwhite.png"
+        navLogo: "/logonjabwhite.png",
+        navBorderBottom: "1px solid rgba(255,255,255,0.5)",
+        navSearchIconColor: "white",
+        navHighlightColor: "white"
       }}
     >
       <Container
@@ -180,7 +183,7 @@ const Home = () => {
             _after={{
               content: "''",
               display: "block",
-              height: "2px",
+              height: "1px",
               width: "50px",
               backgroundColor: "#e9c8bc",
               my: "20px"
@@ -269,7 +272,7 @@ const Home = () => {
               _after={{
                 content: "''",
                 display: "block",
-                height: "2px",
+                height: "1px",
                 width: "50px",
                 backgroundColor: "#e9c8bc",
                 my: "20px"
@@ -359,7 +362,7 @@ const Home = () => {
               _after={{
                 content: "''",
                 display: "block",
-                height: "2px",
+                height: "1px",
                 width: "50px",
                 backgroundColor: "#e9c8bc",
                 my: "20px"
@@ -482,7 +485,7 @@ const Home = () => {
               _after={{
                 content: "''",
                 display: "block",
-                height: "2px",
+                height: "1px",
                 width: "50px",
                 backgroundColor: "#e9c8bc",
                 my: "20px"
