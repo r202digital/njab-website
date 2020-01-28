@@ -7,7 +7,8 @@ module.exports = withCss(
     withFonts({
       devIndicators: {
         autoPrerender: false
-      }
+      },
+      target: "serverless"
     })
   )
 );
