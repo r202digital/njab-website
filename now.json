@@ -1,7 +1,3 @@
 {
-  "version": 2,
-  "name": "notjustaboxevents",
-  "builds": [
-    { "src": "next.config.js", "use": "@now/next" }
-  ]
+  "name": "notjustaboxevents"
 }
