@@ -168,6 +168,48 @@ const Home = () => {
               </ListItem>
             </List>
           </Flex>
+          <Grid
+            width="100%"
+            gridTemplateColumns="auto 50px 1fr"
+            gridTemplateRows="1fr"
+            gridColumnGap="0px"
+            gridRowGap="0px"
+          >
+            <Heading
+              as="h1"
+              letterSpacing="5px"
+              fontFamily="Proxima Nova"
+              fontSize="24px"
+            >
+              OUR JOURNAL
+            </Heading>
+            <Box
+              backgroundColor="white"
+              transform="rotate(30deg)"
+              mx="24px"
+              my="5px"
+            />
+            <Flex width="100%" textAlign="initial" alignItems="center">
+              <Text>BROWSE BY CATEGORY</Text>
+              <List display="flex">
+                <ListItem>
+                  <Text>ALL</Text>
+                </ListItem>
+                <ListItem>
+                  <Text>WEDDINGS</Text>
+                </ListItem>
+                <ListItem>
+                  <Text>LOREM</Text>
+                </ListItem>
+                <ListItem>
+                  <Text>IPSUM</Text>
+                </ListItem>
+                <ListItem>
+                  <Text>DOLOR</Text>
+                </ListItem>
+              </List>
+            </Flex>
+          </Grid>
         </Container>
       }
       navProps={{
